@@ -30,7 +30,8 @@ directory.Router = Backbone.Router.extend({
         "list":                     "list",
         "employees/:id":            "employeeDetails",
         "employees/:id/reports":    "directReports",
-        "sync":                     "synchronize"
+        "sync":                     "synchronize",
+        "map":                      "map"
     },
 
     initialize: function() {
@@ -110,6 +111,12 @@ directory.Router = Backbone.Router.extend({
         this.slidePage(new directory.views.SyncPage().render());
     },
 
+    map: function() {
+        console.log('1');
+        this.slidePage(new directory.views.Map().render());
+        console.log('2');
+    },
+
     slidePage: function(page) {
 
         var slideFrom,
@@ -165,10 +172,10 @@ directory.Router = Backbone.Router.extend({
 });
 
 $(document).ready(function() {
-    directory.db = window.openDatabase("EmployeeDB", "1.0", "Employee Demo DB", 200000);
+    directory.db = window.openDatabase("EmployeeDB501", "1.0", "Employee Demo DB", 200000);
     var employeeDAO = new directory.dao.EmployeeDAO(directory.db);
     employeeDAO.initialize(function() {
-        directory.utils.templateLoader.load(['search-page', 'report-page', 'employee-page', 'employee-list-item', 'sync-page'],
+        directory.utils.templateLoader.load(['search-page', 'report-page', 'employee-page', 'employee-list-item', 'sync-page', 'map'],
             function() {
                 directory.app = new directory.Router();
                 Backbone.history.start();

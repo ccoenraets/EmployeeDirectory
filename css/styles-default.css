@@ -15,15 +15,32 @@ body {
 }
 
 .header{
-	height: 42px;
-	line-height: 40px;
+	-webkit-background-size: 1px 44px;
+	-moz-background-size: 1px 44px;
+	-ms-background-size: 1px 44px;
+	-o-background-size: 1px 44px;
+	background-size: 1px 44px;
+	height: 44px;
+	line-height: 44px;
 	width: 100%;
-	color: #eeeeee;
+	color: #fff;
 	-webkit-user-select: none;
+	/*-webkit-touch-callout: none;*/
     background-color: #444;
-    /*border-top: solid 1px #f4f4f4;*/
-    /*border-bottom: solid 1px #464646;*/
- }
+    /*border-top: solid 1px #888;*/
+    border-bottom: solid 1px #000;
+}
+
+.search-bar {
+    background-color: #c1c1c1;
+    height: 32px;
+    padding-left:6px;
+    padding-right: 6px;
+    padding-top: 5px;
+    margin-bottom: 6px;
+    border-top: solid 1px #f7f7f7;
+    border-bottom: solid 1px #000;
+}
 
 .header-button {
     position: absolute;
@@ -34,7 +51,6 @@ body {
 }
 
 .header-back-button button{
-    display: none;
 }
 
 .header-button button {
@@ -202,7 +218,7 @@ body {
 	line-height: 3em;
 	padding: 10px;
 	display: block;
-	color: #2960d9;
+    background-color: #33b5e5;
 	text-align: center;
 	font-weight: bold;
 }
@@ -211,7 +227,11 @@ body {
 	color: #fff;
 	/*background-color: #4286f5;*/
 	/*background-color: #ff8800;*/
-	background-color: #99cc00;
+	/*background-color: #99cc00;*/
+	/*background-color: #ff8800;*/
+	/*background-color: #33b5e5;*/
+	/*background-color: #33b5e5;*/
+	background-color: #33b5e5;
 	background-repeat: repeat-x;
 }
 .tableview-links li>a.tappable-active *{
@@ -251,6 +271,7 @@ body {
 }
 
 .link-text{
+	/*color: #0099cc;*/
 	color: #0099cc;
 	font-weight: bold;
 }
@@ -404,16 +425,6 @@ body {
 	/*-o-border-image: url(images/button-active.png) 4 10 4 10;*/
 }
 
-.search-bar {
-    background-color: #c1c1c1;
-    height: 33px;
-    padding-left:6px;
-    padding-right: 6px;
-    padding-top: 5px;
-    margin-bottom: 6px;
-    border-top: solid 1px #f4f4f4;
-    border-bottom: solid 1px #666;
-}
 .action-icon {
     position: absolute;
     right: 10px;
@@ -466,11 +477,3 @@ input[type="search"]:focus {
 	outline: none;
 	box-shadow: inset 0 4px 8px rgba(0,0,0,.5), 0 1px #fff;
 }
-
-/*input[type="search"]::-webkit-search-cancel-button {*/
-
-   /* Remove default */
-    /*-webkit-appearance: none;*/
-
-
-/*}*/

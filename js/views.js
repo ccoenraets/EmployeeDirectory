@@ -183,6 +183,29 @@ directory.views.EmployeePage = Backbone.View.extend({
 
 });
 
+directory.views.Map = Backbone.View.extend({
+
+    initialize: function() {
+        this.template = _.template(directory.utils.templateLoader.get('map'));
+    },
+
+    render: function() {
+        $(this.el).html(this.template());
+        setTimeout(function() {
+            var latLng = new google.maps.LatLng(41.4089, -75.6628);
+            var myOptions = {
+                      center: latLng,
+                      zoom: 8,
+                      mapTypeId: google.maps.MapTypeId.ROADMAP
+                    };
+            this.map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+            this.marker = new google.maps.Marker({map: this.map, position: latLng});
+        });
+        return this;
+    }
+
+});
+
 directory.views.SyncPage = Backbone.View.extend({
 
     initialize: function() {
