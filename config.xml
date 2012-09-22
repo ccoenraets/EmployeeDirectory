@@ -3,7 +3,7 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "io.cordova.hello-cordova"
         version   = "2.0.0">
-    <name>Employee Directory</name>
+    <name>Office Directory</name>
 
     <description>
         A simple employee directory application.

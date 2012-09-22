@@ -1,15 +1,14 @@
 // -------------------------------------------------- Utilities ---------------------------------------------------- //
 
-
-if (document.documentElement.hasOwnProperty('ontouchstart')) {
-    $('body').on('click', 'a', function() {
-        return false;
-    });
-    $('body').on('touchstart', 'a', function(event) {
-        window.location = $(event.target).attr('href');
-        return false;
-    });
-}
+//if (document.documentElement.hasOwnProperty('ontouchstart')) {
+//    $('body').on('click', 'a', function() {
+//        return false;
+//    });
+//    $('body').on('touchstart', 'a', function(event) {
+//        window.location = $(event.target).attr('href');
+//        return false;
+//    });
+//}
 
 // The Template Loader. Used to asynchronously load templates located in separate .html files
 directory.utils.templateLoader = {
