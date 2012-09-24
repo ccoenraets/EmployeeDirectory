@@ -171,8 +171,9 @@ directory.Router = Backbone.Router.extend({
 
 });
 
+
 $(document).ready(function() {
-    directory.db = window.openDatabase("EmployeeDB501", "1.0", "Employee Demo DB", 200000);
+	directory.db = window.openDatabase("EmployeeDB502", "1.0", "Employee Demo DB", 100000);
     var employeeDAO = new directory.dao.EmployeeDAO(directory.db);
     employeeDAO.initialize(function() {
         directory.utils.templateLoader.load(['search-page', 'report-page', 'employee-page', 'employee-list-item', 'sync-page', 'map'],
