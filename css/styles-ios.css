@@ -495,3 +495,40 @@ input[type="search"]:focus {
 	outline: none;
 	box-shadow: inset 0 4px 8px rgba(0,0,0,.5), 0 1px #fff;
 }
+
+.action-icon {
+    position: absolute;
+    right: 10px;
+	width: 32px;
+	height: 32px;
+}
+
+.icon-call {
+    background: transparent url(images/call.png);
+    background-size: 100%
+}
+
+.icon-sms {
+    background: transparent url(images/message.png);
+    background-size: 100%
+}
+
+.icon-mail {
+    background: transparent url(images/mail.png);
+    background-size: 100%
+}
+
+.icon-manager {
+    background: transparent url(images/manager.png);
+    background-size: 100%
+}
+
+.icon-reports {
+    background: transparent url(images/reports.png);
+    background-size: 100%
+}
+
+.icon-contact {
+    background: transparent url(images/contacts.png);
+    background-size: 100%
+}
