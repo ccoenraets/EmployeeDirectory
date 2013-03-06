@@ -1,22 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns     = "http://www.w3.org/ns/widgets"
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-<<<<<<< HEAD
-        id        = "io.cordova.hello-cordova"
-        version   = "2.0.0">
-    <name>Employee Directory</name>
-=======
-        id        = "org.coenraets.employeedirectory"
+        id        = "org.coenraets.employeedirectorydev"
         versionCode="10"
-        version   = "1.1.0">
+        version   = "1.0.0">
 
     <!-- versionCode is optional and Android only -->
 
-    <name>Directory Workshop</name>
->>>>>>> testing stuff
+    <name>Employee Directory</name>
 
     <description>
-        A simple employee directory application
+        Simple employee directory.
     </description>
 
     <author href="http://coenraets.org" email="ccoenraets@gmail.com">
@@ -25,10 +19,6 @@
 
     <preference name="webviewbounce" value="false" />
 
-<<<<<<< HEAD
-    <preference name="orientation"      value="default" />
-    <preference name="target-device"    value="universal" />
-    <preference name="fullscreen"       value="false" />
-=======
->>>>>>> testing stuff
+    <access origin="*" />
+
 </widget>
