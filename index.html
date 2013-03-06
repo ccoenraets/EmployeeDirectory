@@ -1,28 +1,78 @@
-<!DOCTYPE html>
 <html>
 <head>
-<title>Employee Directory</title>
-<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0"/>
-<script src="js/styleswitch.js"></script>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="css/source-sans-pro.js"></script>
+    <link href="css/ratchet.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
 </head>
-
 <body>
 
-<div id="content"></div>
+<script id="home-tpl" type="text/x-handlebars-template">
+    <header class="bar-title"><h1 class="title">Employee Directory</h1></header>
+    <div class="bar-standard bar-header-secondary"><input class='search-key' type="text" style="height:31px;"/></div>
+    <div class="content"><ul class='list'></ul></div>
+</script>
 
-<!-- Scripts -->
-<script type="text/javascript" src="cordova.js"></script>
-<script type="text/javascript" src="libs/jquery-1.7.2.min.js"></script>
-<script type="text/javascript" src="libs/underscore-min.js"></script>
-<script type="text/javascript" src="libs/backbone-min.js"></script>
-<script type="text/javascript" src="libs/iscroll.js"></script>
-<script type="text/javascript" src="js/app.js"></script>
-<script type="text/javascript" src="js/utils.js"></script>
-<script type="text/javascript" src="js/dao.js"></script>
-<script type="text/javascript" src="js/models.js"></script>
-<script type="text/javascript" src="js/views.js"></script>
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBmMR8OYLclNRNyYntpC0RUAekx7k0nwj8&sensor=true"></script>
+<script id="employee-li-tpl" type="text/x-handlebars-template">
+    {{#.}}
+    <li>
+        <a href="#employees/{{this.id}}" class="tappable">
+        <img src='img/{{firstName}}_{{lastName}}.jpg'/>
+        <p>{{this.firstName}} {{this.lastName}}</p>
+        <p>{{this.title}}</p>
+        <span class="chevron"></span><span class="count">{{reports}}</span>
+        </a>
+    </li>
+    {{/.}}
+</script>
 
+<script id="employee-tpl" type="text/x-handlebars-template">
+    <header class="bar-title"><a class="button-prev" href="#">Back</a><h1 class="title">Details</h1></header>
+    <div class='content'>
+        <div class="details">
+            <img src='img/{{firstName}}_{{lastName}}.jpg'/>
+            <h1>{{firstName}} {{lastName}}</h1>
+            <h2>{{title}}</h2>
+            <h2>{{city}}</h2>
+        </div>
+        <ul class="list inset" style="clear:both;">
+            {{#if managerId}}
+            <li><a href="#employees/{{managerId}}" class="tappable"><p>View Manager</p><p>{{managerName}}</p><div class="action-icon icon-manager"/></a></li>
+            {{/if}}
+            {{#if reports}}
+            <li><a href="#employees/{{id}}/reports" class="tappable"><p>View Direct Reports</p><p>{{reports}}</p><div class="action-icon icon-reports"/></a></li>
+            {{/if}}
+            <li><a href="tel:{{officePhone}}" class="tappable"><p>Call Office</p><p>{{officePhone}}</p><div class="action-icon icon-call"/></a></li>
+            <li><a href="tel:{{cellPhone}}" class="tappable"><p>Call Cell</p><p>{{cellPhone}}</p><div class="action-icon icon-call"/></a></li>
+            <li><a href="sms:{{cellPhone}}" class="tappable"><p>SMS</p><p>{{cellPhone}}</p><div class="action-icon icon-sms"/></a></li>
+            <li><a href="mailto:{{email}}" class="tappable"><p>Email</p><p>{{email}}</p><div class="action-icon icon-mail"/></a></li>
+            <li><a href="sms:{{cellPhone}}" class="tappable"><p>Map</p><p>{{city}}</p><div class="action-icon icon-location"/></a></li>
+        </ul>
+    </div>
+</script>
+
+<script id="reports-tpl" type="text/x-handlebars-template">
+    <header class="bar-title"><a class="button-prev" href="#">Back</a><h1 class="title">Direct Reports</h1></header>
+    <div class='content'>
+        <div class="details">
+            <img src='img/{{firstName}}_{{lastName}}.jpg'/>
+            <h1>{{firstName}} {{lastName}}</h1>
+            <h2>{{title}}</h2>
+            <h2>{{city}}</h2>
+        </div>
+        <ul class="list"></ul>
+    </div>
+</script>
+
+<script src="phonegap.js"></script>
+<script src="lib/fastclick.js"></script>
+<script src="lib/zepto.min.js"></script>
+<script src="lib/handlebars.js"></script>
+<script src="js/storage/memory-store.js"></script>
+<script src="js/HomeView.js"></script>
+<script src="js/EmployeeView.js"></script>
+<script src="js/ReportsView.js"></script>
+<script src="js/main.js"></script>
 
 </body>
 </html>
